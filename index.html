@@ -546,95 +546,42 @@
             margin-top: 60px;
         }
 
-        /* ── Hamburger Button ── */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            justify-content: center;
-            gap: 5px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 8px;
-            z-index: 200;
-        }
-        .hamburger span {
-            display: block;
-            width: 25px;
-            height: 3px;
-            background: #333;
-            border-radius: 3px;
-            transition: all 0.3s;
-        }
-        .hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-        .hamburger.open span:nth-child(2) { opacity: 0; }
-        .hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-
-        /* ── Responsive ── */
+        /* Responsive */
         @media (max-width: 768px) {
-            .hamburger { display: flex; }
-
-            .nav-menu {
-                display: none;
-                position: fixed;
-                top: 70px;
-                left: 0; right: 0;
-                background: white;
-                flex-direction: column;
-                align-items: stretch;
-                gap: 0;
-                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-                z-index: 150;
-            }
-            .nav-menu.open { display: flex; }
-            .nav-menu li { border-bottom: 1px solid #f0f0f0; }
-            .nav-menu a {
-                display: block;
-                padding: 16px 24px;
-                font-size: 15px;
-                font-weight: 600;
+            .home-page h1 {
+                font-size: 32px;
             }
 
-            .home-page h1 { font-size: 32px; }
-            .home-page .subtitle { font-size: 15px; }
+            .home-page .subtitle {
+                font-size: 16px;
+            }
 
             .missions-section h2,
             .form-section h2,
-            .recruitment-section h2,
-            .carrieres-section h2,
-            .contact-section h2 { font-size: 26px; }
+            .recruitment-section h2 {
+                font-size: 28px;
+            }
+
+            .nav-menu {
+                gap: 15px;
+            }
+
+            .nav-menu a {
+                font-size: 12px;
+            }
 
             .missions-grid,
-            .positions-grid,
-            .career-cards,
-            .contact-cards { grid-template-columns: 1fr; }
+            .positions-grid {
+                grid-template-columns: 1fr;
+            }
 
-            .form-grid { grid-template-columns: 1fr; }
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
 
-            .form-wrapper { padding: 20px 16px; }
-
-            .home-video { height: 220px; }
-
-            .career-card-header { padding: 20px 18px 14px; }
-            .career-card-header h3 { font-size: 18px; }
-
-            .contact-section { padding: 40px 0; }
-            .contact-card { padding: 28px 20px; }
-
-            .missions-section,
-            .carrieres-section,
-            .recruitment-section { padding: 40px 0; }
-
-            .home-page { padding: 40px 16px; }
-
-            .cta-button { width: 100%; margin: 8px 0; box-sizing: border-box; }
-
-            footer { font-size: 13px; padding: 20px 16px; }
-        }
-
-        @media (max-width: 400px) {
-            .home-page h1 { font-size: 26px; }
-            nav { padding: 0 14px; }
+            .home-video {
+                height: 250px;
+            }
         }
     </style>
 </head>
@@ -642,20 +589,17 @@
     <!-- Navigation -->
     <header>
         <nav>
-            <a href="#" class="nav-logo" onclick="showPage('home', event)">
+            <a href="#" class="nav-logo" onclick="showPage('home')">
                 <img src="https://i.imgur.com/ITkSOJY.png" alt="Logo">
                 LA DÉFENSE
             </a>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#" onclick="showPage('home', event)" class="nav-link active">Accueil</a></li>
-                <li><a href="#" onclick="showPage('plan-vol', event)" class="nav-link">Plan de Vol</a></li>
-                <li><a href="#" onclick="showPage('recrutement', event)" class="nav-link">Recrutement</a></li>
-                <li><a href="#" onclick="showPage('carrieres', event)" class="nav-link">Carrières</a></li>
-                <li><a href="#" onclick="showPage('contact', event)" class="nav-link">Contact</a></li>
+            <ul class="nav-menu">
+                <li><a href="#" onclick="showPage('home')" class="nav-link active">Accueil</a></li>
+                <li><a href="#" onclick="showPage('plan-vol')" class="nav-link">Plan de Vol</a></li>
+                <li><a href="#" onclick="showPage('recrutement')" class="nav-link">Recrutement</a></li>
+                <li><a href="#" onclick="showPage('carrieres')" class="nav-link">Carrières</a></li>
+                <li><a href="#" onclick="showPage('contact')" class="nav-link">Contact</a></li>
             </ul>
-            <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
-                <span></span><span></span><span></span>
-            </button>
         </nav>
     </header>
 
@@ -1107,7 +1051,7 @@
                         <span class="contact-badge">Communauté</span>
                         <h3>Discord Général</h3>
                         <p>Serveur principal de <strong>Belguim Ville RP</strong>.<br>Actualités, événements, discussions générales et vie de la ville.</p>
-                        <a href="https://discord.gg/LIEN_VILLE" target="_blank" class="discord-btn ville">
+                        <a href="https://discord.gg/dQ5b2ypxs4" target="_blank" class="discord-btn ville">
                             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
                             Rejoindre le Discord Ville
                         </a>
@@ -1117,7 +1061,7 @@
                         <span class="contact-badge">Institution</span>
                         <h3>Discord La Défense</h3>
                         <p>Serveur officiel de <strong>La Défense Belge</strong>.<br>Opérations, recrutement, briefings et communications internes.</p>
-                        <a href="https://discord.gg/LIEN_DEFENSE" target="_blank" class="discord-btn defense">
+                        <a href="https://discord.gg/AxZMTrtTpq" target="_blank" class="discord-btn defense">
                             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
                             Rejoindre le Discord Défense
                         </a>
@@ -1156,29 +1100,25 @@
 
         let selectedPosition = null;
 
-        // Toggle menu hamburger
-        function toggleMenu() {
-            const menu = document.getElementById('navMenu');
-            const btn = document.getElementById('hamburger');
-            menu.classList.toggle('open');
-            btn.classList.toggle('open');
-        }
-
         // Afficher/Masquer les pages
-        function showPage(pageId, evt) {
+        function showPage(pageId) {
+            // Masquer toutes les pages
             document.querySelectorAll('.page').forEach(page => {
                 page.classList.remove('active');
             });
+
+            // Masquer tous les liens nav
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.classList.remove('active');
             });
+
+            // Afficher la page sélectionnée
             document.getElementById(pageId).classList.add('active');
-            if (evt && evt.target) evt.target.classList.add('active');
 
-            // Fermer le menu mobile
-            document.getElementById('navMenu').classList.remove('open');
-            document.getElementById('hamburger').classList.remove('open');
+            // Marquer le lien actif
+            event.target.classList.add('active');
 
+            // Scroll vers le haut
             window.scrollTo(0, 0);
         }
 
